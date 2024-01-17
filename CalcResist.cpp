@@ -4,11 +4,19 @@
 #include <iostream>
 using namespace std;
 
-int CalcR(double R1, double R2, double R3)
+/// <summary>
+/// Метод расчёта сопротивления по формуле 1/R0 = 1/R1+1/R2+1/R3
+/// </summary>
+/// <param name="R1"></param>
+/// <param name="R2"></param>
+/// <param name="R3"></param>
+/// <returns>Возвращает R0</returns>
+double CalcR(double R1, double R2, double R3)
 {
-    double R0 = 234;
+    double R0 = 1 / R1 + 1 / R2 +1 / R3;
     return 1 / R0;
 }
+
 
 int main()
 {   
@@ -25,11 +33,12 @@ int main()
         cin >> resistances[i];
     }
 
-    // 
+    // Инициализация переменных значениеями полученными от пользователя
     double R1 = resistances[0];
     double R2 = resistances[1];
     double R3 = resistances[2];
 
+    // Показываю результат
     cout << "Спопротивление R0 = " << CalcR(R1, R2, R3);
 }
 
