@@ -2,10 +2,35 @@
 //
 
 #include <iostream>
+using namespace std;
+
+int CalcR(double R1, double R2, double R3)
+{
+    double R0 = 234;
+    return 1 / R0;
+}
 
 int main()
-{
-    std::cout << "Hello World!\n";
+{   
+    setlocale(LC_ALL, "Russian");
+
+    const int numResistors = 3; // Определяю размер массива
+    double resistances[numResistors]; // Создаю массив переменных
+
+    cout << "Для расчёта сопротивления R0, необходимо ввести R1, R2, R3" << endl;
+
+    // В цикле собираю и записываю значения
+    for (int i = 0; i < numResistors; ++i) {
+        cout << "Введите значение R" << (i + 1) << ": ";
+        cin >> resistances[i];
+    }
+
+    // 
+    double R1 = resistances[0];
+    double R2 = resistances[1];
+    double R3 = resistances[2];
+
+    cout << "Спопротивление R0 = " << CalcR(R1, R2, R3);
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
